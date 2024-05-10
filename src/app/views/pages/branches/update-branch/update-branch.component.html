@@ -1,0 +1,14 @@
+<p-toast></p-toast>
+<div class="container">
+  <div class="container-1">
+    <p-button
+      icon="pi pi-angle-left"
+      label="Volver"
+      styleClass="p-button-secondary"
+      (onClick)="navigateToListBranch()"
+    ></p-button>
+  </div>
+  <div class="container-1">
+    <app-form-branch (formSubmit)="onFormSubmit($event)" [branchData]="branchData"></app-form-branch>
+  </div>
+</div>

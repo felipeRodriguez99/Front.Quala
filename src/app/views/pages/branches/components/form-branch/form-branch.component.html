@@ -1,0 +1,69 @@
+<div class="container">
+  <form [formGroup]="form" class="p-grid p-fluid">
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="description">Descripción</label>
+        <input
+          id="description"
+          type="text"
+          formControlName="description"
+          pInputText
+          class="p-inputtext"
+        />
+      </div>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="address">Dirección</label>
+        <input
+          id="address"
+          type="text"
+          formControlName="address"
+          pInputText
+          class="p-inputtext"
+        />
+      </div>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="identifications">Identificación</label>
+        <input
+          id="identifications"
+          type="text"
+          formControlName="identifications"
+          pInputText
+          class="p-inputtext"
+        />
+      </div>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+      <div class="p-field">
+        <label for="currencyId">Moneda</label>
+        <p-dropdown
+          id="currencyId"
+          formControlName="currencyId"
+          [options]="currencies"
+          optionLabel="abbreviation"
+          optionValue="id"
+          class="p-dropdown"
+          [style]="{ width: '100%' }"
+        ></p-dropdown>
+      </div>
+    </div>
+
+    <div class="p-col-12" style="margin-top: 20px; text-align: center;">      
+      <button
+        type="submit"
+        pButton
+        [label]="!isUpdate ? 'Guardar' : 'Actualizar'"
+        [disabled]="!form.valid"
+        class="p-button p-button-raised p-button-rounded"
+        style="width: 8em; background-color: cadetblue;"
+        (click)="onSubmit()"
+      ></button>
+    </div>
+  </form>
+</div>
